@@ -28,6 +28,29 @@ app.get('/read',async (req,res)=>{
         }    
     });
 });
+
+app.put('/update',async (req,res)=>{
+    let friend = {};
+    try {
+        await FriendModel.findById(req.body.id,(error,friendToUpdate)=>{
+            console.log('Name :'+req.body.name);
+            friendToUpdate.name = req.body.name;
+            friendToUpdate.age = Number(req.body.age);
+            friendToUpdate.save();
+            friend = friendToUpdate;
+        });
+    } catch (error) {
+        console.log('ERR '+error);
+    }
+ res.send(friend);
+});
+
+app.delete('/delete/:id',async(req,res)=>{
+    console.log('Id to delete -->'+req.params.id)
+    await FriendModel.findByIdAndRemove(req.params.id).exec();
+    res.send(req.params.id);
+});
+
 app.get('/',async (req,res)=>{
     res.send('<h1>Home page</h1>');
 });

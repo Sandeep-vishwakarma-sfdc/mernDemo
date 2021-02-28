@@ -1,31 +1,14 @@
 .App {
-  display: flex;
-  justify-content: center;
+    margin:10px 10px 10px 10px;
 }
-.inputContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    flex-direction: column;
-    height: 500px;
-    width: 500px;
-    background-color: rgb(183, 240, 240);
+.scrolly {
+    height: 350px;
+    width: 100%;
+    overflow-y: scroll;
 }
-.input{
-    height: 40px;
-    width: 100px;
-    justify-content: center;
-    flex-direction: column;
+thead th{
+    position: sticky;
+    top: 0;
+    background-color: rgb(213, 248, 248);
 }
-.friendsList{
-    
-}
-.friendrow{
-    height: 20px;
-    width: 400px;
-    background-color: rgb(181, 240, 240);
-    display: flex;
-}
-.friendrow h3{
-    margin-left: 10px;
-}
+
