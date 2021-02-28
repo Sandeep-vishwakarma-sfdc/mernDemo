@@ -16,12 +16,7 @@ app.post('/insert',async (req,res)=>{
        age:req.body.age
    });
    await friend.save();
-   FriendModel.find({},(err,result)=>{
-       if(result){
-           console.log('Result ',result);
-           res.send(result);
-       }
-   })
+   res.send(friend);
 });
 
 app.get('/read',async (req,res)=>{
